@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenangan Inspirasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><header>
+    <nav>
+        <h2>Kenangan Inspirasi</h2>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#berita">Berita</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+</header><section id="beranda" class="hero">
+    <img src="1000170260.png" alt="Logo Kopi Kenangan" class="logo">
+    <h1>Rayakan Keberagaman di Setiap Tegukan</h1>
+    <p>
+        Kampanye Kopinya Orang Indonesia yang merayakan keberagaman
+        masyarakat Indonesia melalui budaya kopi yang menyatukan.
+    </p>
+    <a href="#berita" class="btn">Baca Selengkapnya</a>
+</section><section id="profil" class="section">
+    <h2>Profil Perusahaan</h2><div class="card">
+    <h3>Visi</h3>
+    <p>
+        Menjadi jaringan kopi terbesar di Indonesia dan merambah pasar
+        global melalui produk berkualitas tinggi namun terjangkau.
+    </p>
+</div>
+
+<div class="card">
+    <h3>Misi</h3>
+    <p>
+        Menyediakan kopi berkualitas terbaik dengan memanfaatkan teknologi
+        untuk memberikan pengalaman pelanggan yang efisien.
+    </p>
+</div>
+
+<div class="card">
+    <h3>Bidang Usaha</h3>
+    <p>Food & Beverage (F&B), khususnya ritel kopi kontemporer.</p>
+</div>
+
+<div class="card">
+    <h3>Struktur Organisasi</h3>
+    <ul>
+        <li>CEO / Co-Founder : Edward Tirtanata</li>
+        <li>Co-Founder : James Prananto</li>
+        <li>Marketing & Brand Strategy</li>
+        <li>Finance & Accounting</li>
+        <li>Research & Development</li>
+        <li>Supply Chain & Operation</li>
+        <li>Store Manager, Barista, dan Cashier</li>
+    </ul>
+</div>
+
+</section><section id="berita" class="section">
+    <h2>Berita Perusahaan</h2><div class="card">
+    <h3>Kopi Kenangan Luncurkan Kampanye "Kopinya Orang Indonesia"</h3>
+
+    <p>
+        PT Bumi Berkah Boga melalui brand Kopi Kenangan meluncurkan
+        kampanye nasional bertajuk "Kopinya Orang Indonesia".
+    </p>
+
+    <p>
+        Kampanye ini bertujuan mempererat kedekatan emosional dengan
+        pelanggan dari berbagai latar belakang profesi, budaya, dan daerah.
+    </p>
+
+    <p>
+        Melalui perpaduan inovasi teknologi grab-and-go dan sentuhan budaya
+        lokal, Kopi Kenangan ingin menghadirkan pengalaman menikmati kopi
+        yang lebih dekat dengan masyarakat Indonesia.
+    </p>
+</div>
+
+</section><section id="galeri" class="section">
+    <h2>Galeri</h2><div class="gallery">
+    <div class="gallery-item">
+        <img src="1000170270.png" alt="Brosur Kampanye">
+        <p>Brosur Kampanye Kopinya Orang Indonesia</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="1000170260.png" alt="Logo Kopi Kenangan">
+        <p>Logo Kopi Kenangan</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" alt="Gerai Kopi">
+        <p>Suasana Gerai Kopi Kenangan</p>
+    </div>
+</div>
+
+</section><section id="kontak" class="section">
+    <h2>Kontak</h2><div class="card">
+    <p><strong>Perusahaan:</strong> PT Bumi Berkah Boga</p>
+    <p><strong>Alamat:</strong> Menara Sentraya, Jakarta Selatan</p>
+    <p><strong>Email:</strong> pr@kopikenangan.com</p>
+    <p><strong>Website:</strong> www.kopikenangan.com</p>
+    <p><strong>Instagram:</strong> @kopikenangan.id</p>
+</div>
+
+</section><footer>
+    <p>© 2026 Kenangan Inspirasi | Rayakan Keberagaman di Setiap Tegukan</p>
+</footer></body>
+</html>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f9f9f9;
+color:#333;
+line-height:1.7;
+}
+
+header{
+background:#111111;
+position:sticky;
+top:0;
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+}
+
+nav h2{
+color:white;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(#5C3D2E,#111111);
+color:white;
+}
+
+.logo{
+width:220px;
+max-width:90%;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+background:#E23E57;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+color:#5C3D2E;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery-item{
+background:white;
+padding:15px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-item img{
+width:100%;
+border-radius:10px;
+}
+
+footer{
+background:#111111;
+color:white;
+text-align:center;
+padding:20px;
+}
