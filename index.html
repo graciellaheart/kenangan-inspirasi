@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KenanganInspirasi - Kopi Kenangan</title>
+    <style>
+        /* === RESET & GOOGLE FONTS === */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* FITUR SMOOTH SCROLLING & OFFSET HEADER */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        :root {
+            --primary-blue: #622A0F;
+            --secondary-blue: #ffff;
+            --accent-green: #0000;
+            --text-dark: #333;
+            --text-gray: #666;
+            --bg-light: #F8F9FA;
+        }
+
+        body {
+            background-color: #ffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* === NAVBAR === */
+        header {
+            background-color: var(--text-dark);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.0);
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--accent-green);
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #000000;
+        }
+
+        /* === HERO SECTION === */
+        #hero {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 80px 5% 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge {
+    background-color: #000000; /* Mengubah background menjadi hitam */
+    color: #ffffff;            /* Mengubah warna teks menjadi putih supaya kontras */
+    border: 1px solid #000000; /* Border juga hitam agar seragam */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-family: serif;
+            font-weight: normal;
+        }
+
+        #hero p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tombol Berita (Warna Hitam) */
+        .btn-black {
+            background-color: #000000; /* Warna hitam */
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        /* Efek saat mouse diarahkan ke tombol */
+        .btn-black:hover {
+            background-color: #333333; /* Warna abu-abu gelap saat di-hover */
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            padding: 0 40px;
+            border-right: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 15px;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* === GENERAL LAYOUT === */
+        section {
+            padding: 60px 10%;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-family: serif;
+        }
+
+        .section-subtitle {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        /* === PROFIL SECTION === */
+       .profil-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--primary-blue); /* Diubah mengikuti warna cokelat di screenshot */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .card h4 {
+            color: #ffffff; /* DIUBAH: Judul kartu sekarang berwarna putih */
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h4::before {
+            content: "•";
+            color: var(--accent-green);
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: #ffffff; /* DIUBAH: Teks isi sekarang berwarna putih agar terbaca */
+        }
+
+        /* === STRUKTUR ORGANISASI (BENTUK BAGAN/TREE) === */
+        .org-box {
+            background-color: var(--primary-blue);
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            overflow-x: auto;
+        }
+        
+        .org-box h3 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* === CSS STRUKTUR ORGANISASI (BAGAN DENGAN GARIS) === */
+.tree {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.tree ul {
+    padding-top: 20px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.tree li {
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+
+/* Menggambar Garis Horizontal & Vertikal */
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 2px solid #ccc; /* Warna garis */
+    width: 50%; height: 20px;
+}
+.tree li::after {
+    right: auto; left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+/* Menghilangkan garis untuk elemen tunggal */
+.tree li:only-child::after, .tree li:only-child::before { display: none; }
+
+/* Mengatur agar garis tersambung ke parent */
+.tree ul ul::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0; height: 20px;
+}
+
+/* Memastikan kotak jabatan tampil rapi */
+.tree li a {
+    border: 1px solid #333;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    min-width: 120px;
+}
+        /* Desain khusus untuk kotak paling atas (Manajemen Pusat) */
+        .tree > ul > li > a {
+            background-color: #e0e0e0; /* Warna lebih gelap untuk induk */
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 12px 30px;
+            color: #000000; /* UBAH KE HITAM */
+        }
+
+        .tree li a:hover {
+            background-color: var(--primary-blue);
+            color: #ffffff; /* Saat di-hover berubah jadi putih */
+            border-color: var(--primary-blue);
+        }
+
+        /* === KABAR TERBARU SECTION === */
+.news-image {
+    width: 100%;
+    /* Hapus atau komentari max-height statis agar tinggi kotak mengikuti proporsi gambar asli */
+    height: auto; 
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-image img {
+    width: 100%;
+    height: auto;        /* Mengikuti tinggi alami gambar */
+    object-fit: contain; /* Gambar utuh 100% tanpa terpotong */
+}
+
+        .news-title {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* === 5W1H SECTION === */
+        .box-5w1h-container {
+            background-color: var(--primary-blue);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .box-5w1h-container h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .grid-5w1h {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-5w1h { grid-template-columns: 1fr; }
+            .profil-container { grid-template-columns: 1fr; }
+            .card style { grid-column: auto; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        .item-5w1h {
+            background-color: var(--secondary-blue);
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .item-5w1h h5 {
+            color: #000000;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .item-5w1h p {
+            font-size: 0.8rem;
+            color: #492000;
+        }
+
+        /* === GALERI SECTION === */
+        /* === GALERI SECTION REVISION === */
+
+/* Kotak Pembungkus Banner Utama (Brosur) */
+/* 1. Gambar Berita: Tampil utuh tanpa terpotong */
+.news-image {
+    width: 100%;
+    height: auto; 
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+.news-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+}
+
+/* 2. Gallery Brosur Utama: Tampil utuh tanpa terpotong */
+/* === GALERI SECTION FINAL === */
+
+/* Kotak Pembungkus Banner Utama (Brosur) - Tetap pakaicontain agar utuh */
+.gallery-brosur {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-brosur img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Gambar brosur besar tampil utuh tidak kepotong */
+}
+
+/* Mengatur wadah utama menjadi 2 kolom sama besar */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;                      /* Jarak di antara kedua foto */
+    width: 100%;
+}
+
+/* Mengatur bingkai pembungkus foto */
+.gallery-item {
+    width: 100%;
+    height: 350px;                  /* Menyamakan tinggi kedua foto agar sejajar */
+    overflow: hidden;
+    border-radius: 8px;             /* Membuat sudut foto sedikit melengkung */
+    background-color: #f4f4f4;
+}
+
+/* Mengatur perilaku gambar di dalam bingkai */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* Kunci utama agar gambar pas dan tidak gepeng */
+    object-position: center;        /* Fokus gambar tetap di tengah */
+}
+
+/* Styling Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: #fff;
+    padding: 50px 10%;
+    border-top: 5px solid var(--accent-green);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-info { flex: 2; }
+.footer-info h2 { font-family: serif; margin-bottom: 10px; }
+.footer-info p { margin-bottom: 10px; line-height: 1.5; font-size: 0.9rem; }
+
+.footer-qr { 
+    flex: 1; 
+    text-align: center; 
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 20px; 
+    border-radius: 10px; 
+}
+.footer-qr img { 
+    width: 130px; 
+    height: 130px; 
+    border-radius: 8px; 
+    border: 3px solid #fff; 
+    margin-top: 10px; 
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .footer-container { flex-direction: column; text-align: center; }
+}
+    </style>
+
+
+</head>
+<body>
+
+    <header>
+        <a img="logo.jpeg" class="logo"><span></span> KenanganInspirasi</a>
+        <nav>
+            <ul>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#berita">Berita</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="badge">#KopinyaOrangIndonesia</div>
+        <h1>Merayakan Keberagaman di Setiap Tegukan</h1>
+        <p>Kopi Kenangan hadir membawa pengalaman kopi berkualitas tinggi yang dekat dengan seluruh lapisan masyarakat Indonesia.</p>
+        <a href="#berita" class="btn-black">Baca Berita Terbaru</a>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>7+</h3>
+                <p>Tahun Berdiri</p>
+            </div>
+            <div class="stat-item">
+                <h3>800+</h3>
+                <p>Cerita / Outlet</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Kopi Lokal Pilihan</p>
+            </div>
+            <div class="stat-item">
+                <h3>Grab & Go</h3>
+                <p>Konsep Bisnis Pionir</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil">
+        <h2 class="section-title">Profil Perusahaan</h2>
+        <p class="section-subtitle">PT Bumi Berkah Boga (Kopi Kenangan) merupakan salah satu perusahaan ritel kopi dengan pertumbuhan tercepat di Asia Tenggara.</p>
+        
+        <div class="profil-container">
+            <div class="card">
+                <h4>Visi Perusahaan</h4>
+                <p>Menjadi jaringan kopi terbesar di Indonesia dan merambah pasar global melalui produk berkualitas tinggi namun tetap terjangkau bagi konsumen.</p>
+            </div>
+            <div class="card">
+                <h4>Misi Perusahaan</h4>
+                <p>Menyediakan kopi berkualitas terbaik secara konsisten dengan memanfaatkan integrasi teknologi cerdas demi efisiensi layanan pelanggan (grab-and-go).</p>
+            </div>
+            <div class="card" style="grid-column: span 2;">
+                <h4>Bidang Usaha</h4>
+                <p>Food & Beverage (F&B), khususnya spesialisasi pada komoditas ritel kopi kontemporer berbasis teknologi aplikasi.</p>
+            </div>
+        </div>
+
+        <div class="org-box">
+            <h3>Struktur Organisasi</h3>
+            <div class="tree">
+    <ul>
+        <li>
+            <div class="ceo-wrapper">
+                <a href="#" class="ceo-box"><strong>CEO/Co-Founder</strong><br>Edward Tirtanata</a>
+                <a href="#" class="ceo-box"><strong>CBDO/Co-Founder</strong><br>James Prananto</a>
+            </div>
+            
+            <!-- 2. Cabang Karyawan / Divisi di Bawah CEO -->
+            <ul>
+                <li><a href="#">Human Resources & Culture</a></li>
+                <li><a href="#">Finance & Accounting</a></li>
+                <li><a href="#">Marketing & Brand Strategy<br>(Marketing & PR)</a></li>
+                <li><a href="#">Research & Development (R&D)</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Operasional Outlet</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Area Manager</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Store Manager</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Barista</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+        </div>
+    </section>
+
+    <section id="berita" style="background-color: var(--bg-light);">
+        <h2 class="section-title">Kabar Terbaru Perusahaan</h2>
+        <p class="section-subtitle">Ikuti perkembangan ekspansi pasar internasional dan inovasi terbaru PT Bumi Berkah Boga.</p>
+
+        <div class="news-image" >
+            <img src="foto-1.jpeg" alt="Deskripsi Gambar Disini" width="auto">
+        </div>
+
+        <span class="news-date">📅 07 Mei 2026</span>
+        <h3 class="news-title">Kopi Kenangan Luncurkan Kampanye "Kopinya Orang Indonesia" Sebagai Wujud Apresiasi Keberagaman</h3>
+        <p style="font-size: 0.9rem; color: var(--text-gray);">PT Bumi Berkah Boga (Kopi Kenangan), perusahaan ritel kopi berkonsep grab-and-go yang berstatus unicorn, 
+            resmi meluncurkan kampanye nasional bertajuk "Kopinya Orang Indonesia" pada 7 Mei 2026 di Jakarta. 
+            Kampanye ini bertujuan untuk merayakan semangat keberagaman masyarakat Indonesia sekaligus membangun kedekatan emosional yang lebih dalam dengan pelanggan 
+            dari berbagai latar belakang profesi serta daerah. Dalam pelaksanaannya, Kopi Kenangan menampilkan visual dan cerita pelanggan yang beragam serta tetap mengandalkan 
+            model layanan grab-and-go yang didukung teknologi untuk melayani pelanggan dengan mobilitas tinggi. Melalui inisiatif yang diaktivasi lewat media sosial dan materi visual 
+            di seluruh gerai ini, Kopi Kenangan ingin menegaskan bahwa kopi adalah bahasa universal yang menyatukan masyarakat sekaligus memperkuat posisi mereka sebagai pemimpin di industri Food & Beverage (F&B).</p>
+        <div class="box-5w1h-container">
+            <h3>Analisis (5W + 1H)</h3>
+            <div class="grid-5w1h">
+                <div class="item-5w1h">
+                    <h5>What?</h5>
+                    <p>Kampanye nasional bertajuk “Kopinya Orang Indonesia" untuk merayakan keberagaman masyarakat Indonesia  melalui kopi. </p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Who?</h5>
+                    <p>Diselenggarakan oleh PT Bumi Berkah Boga (Kopi Kenangan). </p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>When?</h5>
+                    <p>Kamis, 7 Mei 2026</p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Where?</h5>
+                    <p>Seluruh gerai Kopi Kenangan di Indonesia</p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>Why?</h5>
+                    <p>Kopi Kenangan percaya bahwa keberagaman adalah kekuatan utama Indonesia, yang dapat menyatukan masyarakat melalui budaya minum kopi. </p>
+                </div>
+                <div class="item-5w1h">
+                    <h5>How?</h5>
+                    <p>Kampanye dilakukan melalui : <br>
+                        - Pembuatan konten di media sosial <br>
+                        - Promosi di seluruh gerai <br>
+                        - Penggunaan teknologi layanan grab-and-go</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri">
+        <h2 class="section-title">Galeri</h2>
+        <h3 style="margin-bottom: 15px; color: var(--primary-blue);">Brosur</h3>
+        <div class="gallery-brosur">
+            <img src="banner.jpeg" alt="Deskripsi Gambar Disini" width="auto">
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="galeri1.jpeg" alt="Deskripsi Gambar Disini">
+            </div>
+            <div class="gallery-item">
+                <img src="galeri2.jpeg" alt="Deskripsi Gambar Disini">
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" style="padding: 0;">
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>Kopi Kenangan</h2>
+                <p>PT Bumi Berkah Boga</p>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 15px 0;">
+                <p><strong>📍 Alamat:</strong><br>Menara Sentraya Lt. 6, Jl. Iskandarsyah Raya No. 1A, Kebayoran Baru, Jakarta Selatan 12160</p>
+                <p><strong>☎ Telepon:</strong> +62 21 5555 8888</p>
+                <p><strong>🌐 Website:</strong> <a href="http://www.kopikenangan.com" style="color: #fff;">www.kopikenangan.com</a></p>
+            </div>
+
+            <div class="footer-qr">
+                <p>Scan untuk Informasi Lebih Lanjut</p>
+                <img src="qrcode.jpeg" alt="QR Code">
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #aaa;">
+            &copy; 2026 PT Bumi Berkah Boga. All Rights Reserved.
+        </div>
+    </footer>
+    </section>
+
+</body>
+</html>
